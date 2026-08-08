@@ -1,1 +1,330 @@
+# PML-005 — Change Management Standard
+
+**Project:** Trading Intelligence Platform (TIP)
+**Document ID:** PML-005
+**Version:** 1.0.0
+**Status:** Approved (Initial Baseline)
+**Classification:** Project Governing Standard
+**Owner:** TIP Architecture & Engineering Team
+**Effective Date:** 2026-08-08
+
+---
+
+# 1. Purpose
+
+The Change Management Standard defines the controlled process for proposing, evaluating, approving, implementing, verifying, and deploying changes to the Trading Intelligence Platform (TIP).
+
+The objective is to ensure that every change improves the platform while protecting architectural integrity, software quality, security, operational stability, and traceability.
+
+No change shall be implemented outside the processes defined in this standard.
+
+---
+
+# 2. Scope
+
+This standard applies to all changes affecting:
+
+* Business requirements
+* Functional requirements
+* Enterprise architecture
+* Project Master Library (PML)
+* Architecture Decision Records (ADR)
+* Source code
+* Database schema
+* APIs
+* Infrastructure
+* Test suites
+* CI/CD pipelines
+* Deployment scripts
+* Production environments
+* Documentation
+
+---
+
+# 3. Change Management Principles
+
+Every change shall be:
+
+* Business justified.
+* Technically reviewed.
+* Risk assessed.
+* Fully traceable.
+* Tested before release.
+* Properly documented.
+* Approved by the appropriate authority.
+* Reversible where practical.
+
+---
+
+# 4. Change Categories
+
+| Category         | Description                                                             |
+| ---------------- | ----------------------------------------------------------------------- |
+| Standard Change  | Low-risk, pre-approved recurring change                                 |
+| Normal Change    | Planned change requiring review and approval                            |
+| Major Change     | High-impact architectural or business change                            |
+| Emergency Change | Urgent production change to restore service or resolve a critical issue |
+
+The change category determines the required level of governance.
+
+---
+
+# 5. Change Request Process
+
+Every proposed change shall follow the lifecycle below.
+
+```text id="gmr3xp"
+Identify Need
+      │
+      ▼
+Create Change Request
+      │
+      ▼
+Impact Assessment
+      │
+      ▼
+Architecture Review
+      │
+      ▼
+Risk Assessment
+      │
+      ▼
+Approval
+      │
+      ▼
+Implementation
+      │
+      ▼
+Testing
+      │
+      ▼
+Documentation Update
+      │
+      ▼
+Release
+      │
+      ▼
+Post-Implementation Review
+      │
+      ▼
+Close Change
+```
+
+---
+
+# 6. Change Request Contents
+
+Every Change Request (CR) shall include:
+
+* Change ID
+* Title
+* Description
+* Business justification
+* Scope
+* Impact assessment
+* Risks
+* Dependencies
+* Estimated effort
+* Proposed implementation date
+* Rollback strategy
+* Approval status
+
+Example:
+
+```text id="j5k5jt"
+CR-2026-001
+
+Implement Market Structure Engine v1.0
+```
+
+---
+
+# 7. Impact Assessment
+
+Every change shall assess the impact on:
+
+* Business functionality
+* Architecture
+* Source code
+* Database
+* APIs
+* Security
+* Performance
+* Documentation
+* Testing
+* Operations
+
+Where significant architectural impact exists, a new ADR shall be created or an existing ADR updated.
+
+---
+
+# 8. Risk Assessment
+
+Changes shall be classified by risk.
+
+| Risk Level | Description                                                                |
+| ---------- | -------------------------------------------------------------------------- |
+| Low        | Minimal impact                                                             |
+| Medium     | Moderate impact with manageable risk                                       |
+| High       | Significant technical or operational impact                                |
+| Critical   | Potential impact on production stability, security, or business continuity |
+
+Higher-risk changes require additional review and testing.
+
+---
+
+# 9. Approval Authority
+
+| Change Type | Approval Authority                                           |
+| ----------- | ------------------------------------------------------------ |
+| Standard    | Technical Lead                                               |
+| Normal      | Technical Lead + Solution Architect                          |
+| Major       | Product Owner + Solution Architect                           |
+| Emergency   | Technical Lead (immediate), followed by retrospective review |
+
+No implementation shall begin before the required approvals have been obtained, except in authorised emergency situations.
+
+---
+
+# 10. Implementation Standards
+
+Approved changes shall:
+
+* Follow applicable PML standards.
+* Be developed on an appropriate Git branch.
+* Include automated tests where applicable.
+* Include documentation updates.
+* Preserve backward compatibility unless otherwise approved.
+
+---
+
+# 11. Testing Requirements
+
+Before release, changes shall complete:
+
+* Unit testing.
+* Integration testing.
+* Regression testing.
+* Security testing (where applicable).
+* Performance testing (where applicable).
+* User acceptance testing (when required).
+
+Testing evidence shall be retained with the change record.
+
+---
+
+# 12. Documentation Requirements
+
+Every approved change shall update affected documentation, including:
+
+* PML documents
+* ADRs
+* Architecture documents
+* Technical design
+* API documentation
+* Database documentation
+* User documentation
+* Release notes
+
+Documentation updates are mandatory before the change is considered complete.
+
+---
+
+# 13. Deployment
+
+Changes shall be deployed using the approved CI/CD pipeline.
+
+Each deployment shall include:
+
+* Version number
+* Build identifier
+* Commit reference
+* Deployment record
+* Rollback instructions
+* Validation results
+
+Manual production deployments shall be avoided wherever practical.
+
+---
+
+# 14. Emergency Changes
+
+Emergency changes are permitted only to:
+
+* Restore production service.
+* Address critical security vulnerabilities.
+* Resolve severe production defects.
+
+Emergency changes shall:
+
+1. Be documented immediately.
+2. Undergo retrospective review.
+3. Be incorporated into the standard development baseline after validation.
+
+---
+
+# 15. Post-Implementation Review
+
+Following implementation, the project shall verify:
+
+* Objectives achieved.
+* No unintended impacts.
+* Documentation updated.
+* Tests completed.
+* Monitoring confirms stable operation.
+* Lessons learned captured.
+
+Significant findings shall be fed back into the continuous improvement process.
+
+---
+
+# 16. Audit & Traceability
+
+Every change shall be traceable to:
+
+* Business requirements
+* Functional requirements
+* PML standards
+* ADRs
+* Source code commits
+* Test evidence
+* Release notes
+
+Git history forms part of the official audit record.
+
+---
+
+# 17. Roles & Responsibilities
+
+| Role               | Responsibilities                  |
+| ------------------ | --------------------------------- |
+| Product Owner      | Approves business scope changes   |
+| Solution Architect | Reviews architectural impact      |
+| Technical Lead     | Oversees technical implementation |
+| Developers         | Implement approved changes        |
+| QA Engineers       | Verify quality and testing        |
+| DevOps Engineer    | Manage deployments                |
+| Operations         | Validate production readiness     |
+
+---
+
+# 18. Compliance
+
+Compliance with this standard is mandatory.
+
+Changes that bypass the defined process shall not become part of the official Trading Intelligence Platform baseline unless formally reviewed and approved.
+
+---
+
+# 19. Change Management Statement
+
+The Change Management Standard ensures that every modification to the Trading Intelligence Platform is governed, traceable, risk-assessed, tested, documented, and aligned with the long-term architectural vision of the project.
+
+---
+
+# Revision History
+
+| Version | Date       | Description                        | Author                              |
+| ------- | ---------- | ---------------------------------- | ----------------------------------- |
+| 1.0.0   | 2026-08-08 | Initial Change Management Standard | TIP Architecture & Engineering Team |
 
