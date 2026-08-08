@@ -1,1 +1,310 @@
+# PML-002 — Governance Framework
+
+**Project:** Trading Intelligence Platform (TIP)
+**Document ID:** PML-002
+**Version:** 1.0.0
+**Status:** Approved (Initial Baseline)
+**Classification:** Project Governing Standard
+**Owner:** TIP Architecture & Engineering Team
+**Effective Date:** 2026-08-08
+
+---
+
+# 1. Purpose
+
+The Governance Framework establishes the management, oversight, decision-making authority, quality controls, and accountability required to successfully deliver and maintain the Trading Intelligence Platform (TIP).
+
+Its purpose is to ensure that all project activities are performed in a controlled, traceable, repeatable, and auditable manner while preserving architectural integrity and engineering quality.
+
+---
+
+# 2. Scope
+
+This framework applies to:
+
+* Project planning
+* Architecture
+* Software development
+* Database development
+* Artificial Intelligence
+* Documentation
+* Testing
+* Security
+* Infrastructure
+* Deployment
+* Production support
+* Maintenance
+
+All contributors shall comply with this governance framework.
+
+---
+
+# 3. Governance Principles
+
+The project shall be governed by the following principles:
+
+* Architecture before implementation.
+* Standards before features.
+* Quality before delivery.
+* Security by design.
+* Automation wherever practical.
+* Complete lifecycle traceability.
+* Controlled change management.
+* Continuous improvement.
+
+---
+
+# 4. Governance Structure
+
+The Trading Intelligence Platform shall operate under the following governance structure.
+
+```text
+Project Sponsor
+        │
+        ▼
+Product Owner
+        │
+        ▼
+Solution Architect
+        │
+        ▼
+Technical Lead
+        │
+ ┌──────┼─────────────┬───────────────┐
+ ▼      ▼             ▼               ▼
+Development   QA & Testing   DevOps   Database & AI
+```
+
+Each role has clearly defined responsibilities and decision authority.
+
+---
+
+# 5. Roles and Responsibilities
+
+| Role                | Primary Responsibilities                                       |
+| ------------------- | -------------------------------------------------------------- |
+| Project Sponsor     | Strategic direction, funding, major approvals                  |
+| Product Owner       | Business priorities, backlog ownership, scope decisions        |
+| Solution Architect  | Enterprise architecture, technical governance, design approval |
+| Technical Lead      | Technical implementation, code quality, mentoring              |
+| Software Developers | Feature implementation, unit testing, documentation            |
+| QA/Test Engineers   | Verification, validation, test automation                      |
+| DevOps Engineer     | CI/CD, deployment, infrastructure automation                   |
+| Database Engineer   | Database design, optimisation, migration                       |
+| AI Engineer         | AI models, feature engineering, evaluation                     |
+| Operations          | Production support, monitoring, incident response              |
+
+In the early stages of the project, one individual may perform multiple roles.
+
+---
+
+# 6. Decision Authority
+
+The following decisions require formal approval.
+
+| Decision                | Approval Authority                     |
+| ----------------------- | -------------------------------------- |
+| Project Scope           | Product Owner                          |
+| Architecture Changes    | Solution Architect                     |
+| Coding Standards        | Technical Lead                         |
+| Database Schema Changes | Database Engineer & Solution Architect |
+| Security Standards      | Security Reviewer / Solution Architect |
+| Release Approval        | Product Owner & Technical Lead         |
+| Production Deployment   | Release Manager / DevOps               |
+
+Major architectural decisions shall also be documented through an Architecture Decision Record (ADR).
+
+---
+
+# 7. Architecture Governance
+
+All software shall comply with:
+
+* Project Master Library (PML)
+* Approved Architecture Decision Records (ADR)
+* Volumes 1–4 Architecture Documentation
+* Coding Standards
+* Security Standards
+* Testing Standards
+
+No implementation may knowingly violate these standards without approved exception.
+
+---
+
+# 8. Change Management
+
+All proposed changes shall follow this workflow:
+
+```text
+Change Request
+      │
+      ▼
+Impact Assessment
+      │
+      ▼
+Architecture Review
+      │
+      ▼
+Approval / Rejection
+      │
+      ▼
+Implementation
+      │
+      ▼
+Testing
+      │
+      ▼
+Documentation Update
+      │
+      ▼
+Merge & Release
+```
+
+Every approved change shall be traceable through Git history.
+
+---
+
+# 9. Quality Gates
+
+The following quality gates shall be satisfied before software progresses to the next stage.
+
+### Gate 1 – Requirements
+
+* Requirements documented.
+* Scope approved.
+
+### Gate 2 – Architecture
+
+* Design reviewed.
+* Architecture approved.
+
+### Gate 3 – Development
+
+* Coding standards followed.
+* Static analysis complete.
+* Documentation updated.
+
+### Gate 4 – Testing
+
+* Unit tests passed.
+* Integration tests passed.
+* Regression tests completed.
+
+### Gate 5 – Release
+
+* Security review complete.
+* Performance verified.
+* Release approval granted.
+
+A quality gate failure shall prevent progression until resolved.
+
+---
+
+# 10. Engineering Reviews
+
+Formal reviews shall include:
+
+* Architecture Review
+* Design Review
+* Code Review
+* Test Review
+* Security Review
+* Release Review
+* Post-Implementation Review
+
+Review outcomes shall be recorded and retained.
+
+---
+
+# 11. Risk Management
+
+Project risks shall be:
+
+* Identified
+* Assessed
+* Prioritised
+* Assigned
+* Mitigated
+* Monitored
+* Closed
+
+High-impact risks shall be reviewed regularly.
+
+---
+
+# 12. Issue Management
+
+All issues shall be recorded and classified by:
+
+* Severity
+* Priority
+* Impact
+* Owner
+* Target Resolution Date
+* Current Status
+
+Issues affecting architecture shall be escalated to the Solution Architect.
+
+---
+
+# 13. Communication
+
+The project shall maintain:
+
+* Version-controlled documentation
+* Architecture Decision Records
+* Sprint planning records
+* Release notes
+* Change logs
+* Technical meeting minutes (where applicable)
+
+Git commit history forms part of the official engineering record.
+
+---
+
+# 14. Compliance
+
+Compliance with this framework is mandatory.
+
+Every contributor shall:
+
+* Follow approved standards.
+* Maintain documentation.
+* Produce traceable work.
+* Participate in reviews.
+* Resolve identified defects.
+* Protect architectural integrity.
+
+Non-compliance shall be addressed before work is merged into the primary development branch.
+
+---
+
+# 15. Continuous Improvement
+
+The governance framework shall be reviewed periodically.
+
+Improvements may originate from:
+
+* Lessons learned
+* Code reviews
+* Retrospectives
+* Security assessments
+* Performance analysis
+* Operational experience
+
+Changes shall be managed through the formal change management process.
+
+---
+
+# 16. Governance Statement
+
+The Governance Framework provides the management and engineering controls required to ensure that the Trading Intelligence Platform remains maintainable, secure, scalable, and aligned with its architectural vision throughout its lifecycle.
+
+---
+
+# Revision History
+
+| Version | Date       | Description                  | Author                              |
+| ------- | ---------- | ---------------------------- | ----------------------------------- |
+| 1.0.0   | 2026-08-08 | Initial Governance Framework | TIP Architecture & Engineering Team |
 
