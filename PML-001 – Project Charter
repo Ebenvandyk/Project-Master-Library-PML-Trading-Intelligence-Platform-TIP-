@@ -1,1 +1,225 @@
+# PML-001 — Project Charter
+
+**Project:** Trading Intelligence Platform (TIP)
+**Document ID:** PML-001
+**Version:** 1.0.0
+**Status:** Approved (Initial Baseline)
+**Classification:** Project Governing Standard
+**Owner:** TIP Architecture & Engineering Team
+**Effective Date:** 2026-08-08
+
+---
+
+# 1. Executive Summary
+
+The **Trading Intelligence Platform (TIP)** is an enterprise-grade software platform designed to provide institutional-quality market analysis, trading intelligence, risk management, portfolio management, and artificial intelligence capabilities.
+
+The platform combines **MetaTrader 5 (MQL5)** for market connectivity and trade execution with **Python-based analytics and AI services**, supported by a modern data architecture and disciplined engineering practices.
+
+TIP is being developed as a modular, scalable, secure, and maintainable platform using enterprise software engineering principles and comprehensive governance defined by the **Project Master Library (PML)**.
+
+---
+
+# 2. Project Vision
+
+To develop a world-class Trading Intelligence Platform that enables disciplined, data-driven, explainable, and automated trading decisions through enterprise architecture, advanced analytics, and artificial intelligence.
+
+---
+
+# 3. Mission Statement
+
+To design, implement, and continuously improve a professional trading platform that:
+
+* Delivers reliable market intelligence.
+* Supports institutional trading methodologies.
+* Protects capital through robust risk management.
+* Provides explainable AI-assisted decision support.
+* Maintains high standards of software quality, security, and operational reliability.
+
+---
+
+# 4. Strategic Objectives
+
+The Trading Intelligence Platform shall:
+
+1. Provide a reusable enterprise trading framework.
+2. Support modular development and future expansion.
+3. Maintain complete traceability from requirements to implementation.
+4. Deliver deterministic and auditable trading behaviour.
+5. Integrate AI as decision support while retaining deterministic risk controls.
+6. Enable automated testing, deployment, and monitoring.
+7. Support continuous improvement through governed change management.
+
+---
+
+# 5. Project Scope
+
+The project includes the design, implementation, testing, deployment, and maintenance of:
+
+* Trading platform core framework.
+* Market data acquisition and processing.
+* Market structure analysis.
+* Trend analysis.
+* Liquidity analysis.
+* Smart Money Concepts analysis.
+* Supply and Demand analysis.
+* Technical indicator framework.
+* Strategy evaluation engine.
+* Risk management engine.
+* Trade execution engine.
+* Portfolio management.
+* Monitoring and diagnostics.
+* Reporting and analytics.
+* Artificial intelligence services.
+* Database and persistence layer.
+* APIs and integration services.
+* Deployment automation.
+* Operational support.
+
+---
+
+# 6. Out of Scope (Version 1.0)
+
+The following capabilities are excluded from the initial production release unless formally approved:
+
+* High-frequency trading (HFT).
+* Cross-exchange arbitrage.
+* Blockchain or cryptocurrency custody.
+* Social trading.
+* Mobile applications.
+* Web-based trading terminals.
+* Reinforcement learning for autonomous trade execution.
+* Multi-tenant SaaS deployment.
+
+These may be considered in future roadmap versions.
+
+---
+
+# 7. Guiding Principles
+
+Development of TIP shall be governed by the following principles:
+
+* **Architecture before implementation**
+* **Standards before features**
+* **Security by design**
+* **Quality built into every stage**
+* **Automation wherever practical**
+* **Traceability across the entire lifecycle**
+* **Continuous learning and improvement**
+* **Explainability over unnecessary complexity**
+
+---
+
+# 8. Success Criteria
+
+The project will be considered successful when:
+
+* The platform satisfies all approved functional requirements.
+* Non-functional performance targets are achieved.
+* Security requirements are met.
+* Code complies with the Project Master Library.
+* Automated tests achieve the agreed coverage targets.
+* CI/CD pipelines support repeatable deployments.
+* Operational monitoring and diagnostics are in place.
+* Documentation is complete and maintained.
+
+---
+
+# 9. Stakeholders
+
+| Role                | Responsibility                                 |
+| ------------------- | ---------------------------------------------- |
+| Product Owner       | Defines business priorities and approves scope |
+| Solution Architect  | Owns architecture and technical direction      |
+| Software Developers | Implement approved designs                     |
+| QA/Test Engineers   | Verify quality and compliance                  |
+| DevOps Engineer     | Build, deployment, and operational automation  |
+| Database Engineer   | Database design and optimisation               |
+| AI Engineer         | AI models and analytics                        |
+| Operations          | Production support and monitoring              |
+
+*In the initial stages of the project, one individual may fulfil multiple roles.*
+
+---
+
+# 10. Governance
+
+The Trading Intelligence Platform shall be governed through:
+
+* Project Master Library (PML).
+* Architecture Decision Records (ADR).
+* Version-controlled documentation.
+* Git-based source control.
+* Peer review.
+* Automated testing.
+* Release approval workflow.
+
+---
+
+# 11. Deliverables
+
+The project shall produce:
+
+* Project Master Library.
+* Enterprise architecture documentation.
+* Technical design documentation.
+* Production-ready MQL5 source code.
+* Production-ready Python services.
+* Database schema and migration scripts.
+* Automated test suites.
+* CI/CD pipelines.
+* Deployment scripts.
+* User and technical documentation.
+
+---
+
+# 12. Risks
+
+Key project risks include:
+
+* Architectural drift.
+* Inconsistent coding practices.
+* Scope expansion without governance.
+* Insufficient automated testing.
+* Security vulnerabilities.
+* Technology dependency changes.
+* Performance degradation as complexity grows.
+
+These risks shall be actively managed through the governance processes defined in the PML.
+
+---
+
+# 13. Project Lifecycle
+
+The project lifecycle is defined as:
+
+1. Business Requirements
+2. Enterprise Architecture
+3. Technical Design
+4. Project Master Library
+5. Software Implementation
+6. Testing & Verification
+7. Deployment
+8. Operations
+9. Continuous Improvement
+
+Progression between phases requires completion of the defined quality gates.
+
+---
+
+# 14. Authority
+
+This Project Charter establishes the official objectives, governance, and direction of the Trading Intelligence Platform.
+
+All contributors shall comply with this charter and with the standards defined throughout the Project Master Library.
+
+Any deviation from this charter shall require formal review and approval through the project's governance process.
+
+---
+
+# Revision History
+
+| Version | Date       | Description             | Author                              |
+| ------- | ---------- | ----------------------- | ----------------------------------- |
+| 1.0.0   | 2026-08-08 | Initial Project Charter | TIP Architecture & Engineering Team |
 
