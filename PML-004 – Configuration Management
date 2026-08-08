@@ -1,1 +1,355 @@
+# PML-004 — Configuration Management Standard
+
+**Project:** Trading Intelligence Platform (TIP)
+**Document ID:** PML-004
+**Version:** 1.0.0
+**Status:** Approved (Initial Baseline)
+**Classification:** Project Governing Standard
+**Owner:** TIP Architecture & Engineering Team
+**Effective Date:** 2026-08-08
+
+---
+
+# 1. Purpose
+
+The Configuration Management (CM) Standard establishes the policies, processes, and controls required to identify, version, manage, protect, and audit all configuration items (CIs) associated with the Trading Intelligence Platform (TIP).
+
+Configuration Management ensures that the project remains reproducible, traceable, and maintainable throughout its lifecycle by controlling changes to software, documentation, infrastructure, databases, environments, and releases.
+
+---
+
+# 2. Scope
+
+This standard applies to every configuration item created or maintained within the Trading Intelligence Platform, including:
+
+* Source code
+* Documentation
+* Project Master Library (PML)
+* Architecture Decision Records (ADR)
+* Database schemas
+* SQL migration scripts
+* Configuration files
+* Build scripts
+* CI/CD pipelines
+* Docker files
+* Infrastructure definitions
+* Test assets
+* Release packages
+* Deployment scripts
+
+No controlled configuration item shall exist outside the approved repository structure.
+
+---
+
+# 3. Configuration Management Objectives
+
+Configuration Management shall:
+
+* Ensure every configuration item is uniquely identifiable.
+* Maintain complete version history.
+* Enable reproducible builds.
+* Preserve release integrity.
+* Support auditing and traceability.
+* Prevent uncontrolled changes.
+* Support rollback and disaster recovery.
+* Maintain consistency across environments.
+
+---
+
+# 4. Configuration Item (CI) Definition
+
+A Configuration Item (CI) is any artefact whose state must be controlled.
+
+Examples include:
+
+| CI Category    | Examples                               |
+| -------------- | -------------------------------------- |
+| Documentation  | PML, Volumes 1–4, ADRs                 |
+| Source Code    | MQL5, Python                           |
+| Database       | Schema, migrations, seed data          |
+| Infrastructure | Docker, deployment scripts             |
+| Configuration  | JSON, YAML, INI, environment variables |
+| Testing        | Test suites, test data                 |
+| Release        | Packages, installers, binaries         |
+
+Every CI shall have a unique identifier and version.
+
+---
+
+# 5. Repository Structure
+
+The official project repository shall contain:
+
+```text id="u3eqri"
+Trading-Intelligence-Platform/
+
+docs/
+
+source/
+
+database/
+
+tests/
+
+deployment/
+
+scripts/
+
+tools/
+
+build/
+
+.github/
+```
+
+Each directory represents a controlled configuration baseline.
+
+---
+
+# 6. Configuration Identification
+
+Every configuration item shall include:
+
+* Unique name
+* Version
+* Owner
+* Location
+* Status
+* Related requirement (where applicable)
+
+Examples:
+
+```text id="8cphqd"
+PML-004
+
+CTIPObject.mqh
+
+schema_v1.sql
+
+docker-compose.yml
+
+MarketDataEngine.py
+```
+
+---
+
+# 7. Version Control
+
+All configuration items shall be stored in Git.
+
+Versioning rules:
+
+* Documentation → Semantic Versioning.
+* Source Code → Git commit history and release tags.
+* Database → Sequential migration versions.
+* Releases → Semantic Versioning.
+
+Example release tags:
+
+```text id="jvow4w"
+v1.0.0
+
+v1.1.0
+
+v1.1.1
+
+v2.0.0
+```
+
+---
+
+# 8. Branching Strategy
+
+The project shall use the following Git branching model.
+
+```text id="vq5jlwm"
+main
+
+develop
+
+feature/*
+
+release/*
+
+hotfix/*
+```
+
+Branch purposes:
+
+| Branch    | Purpose                   |
+| --------- | ------------------------- |
+| main      | Production-ready baseline |
+| develop   | Integration branch        |
+| feature/* | New functionality         |
+| release/* | Release preparation       |
+| hotfix/*  | Urgent production fixes   |
+
+Direct commits to `main` are prohibited.
+
+---
+
+# 9. Baselines
+
+The following baselines shall be maintained.
+
+| Baseline               | Description                             |
+| ---------------------- | --------------------------------------- |
+| Documentation Baseline | Approved PML and architecture documents |
+| Development Baseline   | Stable integration build                |
+| Testing Baseline       | Approved test suite                     |
+| Release Baseline       | Production release                      |
+| Operational Baseline   | Live production environment             |
+
+Each baseline shall be reproducible.
+
+---
+
+# 10. Configuration Change Process
+
+All configuration changes shall follow this workflow.
+
+```text id="grxwpv"
+Change Request
+      │
+      ▼
+Impact Assessment
+      │
+      ▼
+Approval
+      │
+      ▼
+Implementation
+      │
+      ▼
+Testing
+      │
+      ▼
+Review
+      │
+      ▼
+Merge
+      │
+      ▼
+Baseline Update
+```
+
+Every change shall be recorded through Git history.
+
+---
+
+# 11. Build Reproducibility
+
+Every approved release shall be reproducible from:
+
+* Tagged source code.
+* Approved configuration files.
+* Approved database migrations.
+* Approved dependencies.
+* Approved build scripts.
+
+No manual modifications shall be required after checkout.
+
+---
+
+# 12. Release Identification
+
+Every production release shall include:
+
+* Version number
+* Release tag
+* Build number
+* Commit hash
+* Release date
+* Change log
+* Supporting documentation
+
+Each release shall be uniquely identifiable.
+
+---
+
+# 13. Environment Configuration
+
+The following environments shall be maintained separately.
+
+| Environment | Purpose                     |
+| ----------- | --------------------------- |
+| Development | Active development          |
+| Integration | Feature integration         |
+| Testing     | Verification and validation |
+| Staging     | Pre-production validation   |
+| Production  | Live operations             |
+
+Configuration values shall be externalised and environment-specific.
+
+---
+
+# 14. Audit & Traceability
+
+Configuration Management shall support complete traceability between:
+
+* Requirements
+* PML Standards
+* ADRs
+* Architecture
+* Source Code
+* Test Cases
+* Releases
+
+This enables end-to-end lifecycle auditing.
+
+---
+
+# 15. Backup & Recovery
+
+The project repository shall be protected through:
+
+* Remote Git hosting.
+* Regular repository backups.
+* Database backups.
+* Release archive retention.
+* Disaster recovery procedures.
+
+Repository integrity shall be periodically verified.
+
+---
+
+# 16. Responsibilities
+
+| Role               | Responsibilities                |
+| ------------------ | ------------------------------- |
+| Solution Architect | Configuration governance        |
+| Technical Lead     | Source code baseline            |
+| Developers         | Correct branching and commits   |
+| DevOps Engineer    | Build and release configuration |
+| Database Engineer  | Database version management     |
+| QA Engineer        | Test baseline verification      |
+
+---
+
+# 17. Compliance
+
+All contributors shall:
+
+* Use Git for version control.
+* Follow the approved branching strategy.
+* Reference configuration changes in commits.
+* Maintain reproducible builds.
+* Protect production baselines.
+* Follow the Project Master Library.
+
+Configuration items outside these controls shall not be considered part of the official Trading Intelligence Platform.
+
+---
+
+# 18. Configuration Management Statement
+
+Configuration Management provides the controls required to ensure that every software component, document, database object, configuration file, and release within the Trading Intelligence Platform remains consistent, traceable, reproducible, and auditable throughout the project's lifecycle.
+
+---
+
+# Revision History
+
+| Version | Date       | Description                               | Author                              |
+| ------- | ---------- | ----------------------------------------- | ----------------------------------- |
+| 1.0.0   | 2026-08-08 | Initial Configuration Management Standard | TIP Architecture & Engineering Team |
 
