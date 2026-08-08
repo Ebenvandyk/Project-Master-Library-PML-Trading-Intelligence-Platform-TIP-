@@ -1,1 +1,350 @@
+# PML-003 — Document Control Standard
+
+**Project:** Trading Intelligence Platform (TIP)
+**Document ID:** PML-003
+**Version:** 1.0.0
+**Status:** Approved (Initial Baseline)
+**Classification:** Project Governing Standard
+**Owner:** TIP Architecture & Engineering Team
+**Effective Date:** 2026-08-08
+
+---
+
+# 1. Purpose
+
+The Document Control Standard establishes the policies, processes, and responsibilities for the creation, identification, versioning, approval, distribution, storage, review, and retirement of all project documentation associated with the Trading Intelligence Platform (TIP).
+
+The objective is to ensure that every document used throughout the project is:
+
+* Accurate
+* Current
+* Traceable
+* Controlled
+* Versioned
+* Auditable
+
+This standard applies equally to technical, operational, governance, testing, and user documentation.
+
+---
+
+# 2. Scope
+
+This standard applies to all project documents including, but not limited to:
+
+* Project Master Library (PML)
+* Enterprise Architecture
+* Technical Design Documents
+* Functional Specifications
+* UML Models
+* Architecture Decision Records (ADR)
+* Source Code Documentation
+* API Specifications
+* Database Specifications
+* Test Plans
+* Test Reports
+* Release Notes
+* User Documentation
+* Operational Procedures
+* Training Material
+
+No uncontrolled project document shall be considered authoritative.
+
+---
+
+# 3. Document Hierarchy
+
+The Trading Intelligence Platform shall maintain the following documentation hierarchy:
+
+```text id="b2d7zf"
+Level 1
+Project Master Library (PML)
+
+↓
+
+Level 2
+Architecture Decision Records (ADR)
+
+↓
+
+Level 3
+Architecture & Design Documents
+(Volumes 1–4)
+
+↓
+
+Level 4
+Implementation Documentation
+
+↓
+
+Level 5
+Operational Documentation
+```
+
+Where conflicts exist, the higher-level document shall take precedence unless superseded by an approved revision.
+
+---
+
+# 4. Document Identification
+
+Every controlled document shall include the following metadata on the first page.
+
+| Field              | Description                                       |
+| ------------------ | ------------------------------------------------- |
+| Document Title     | Official document name                            |
+| Document ID        | Unique identifier                                 |
+| Version            | Semantic version number                           |
+| Status             | Draft / Review / Approved / Superseded / Archived |
+| Classification     | Public / Internal / Confidential                  |
+| Owner              | Responsible individual or team                    |
+| Approval Authority | Person or role approving the document             |
+| Effective Date     | Date the document becomes active                  |
+| Review Date        | Scheduled review date                             |
+
+---
+
+# 5. Document Numbering Standard
+
+Document identifiers shall follow a structured naming convention.
+
+Examples:
+
+| Prefix | Purpose                      |
+| ------ | ---------------------------- |
+| PML    | Project Master Library       |
+| ADR    | Architecture Decision Record |
+| EA     | Enterprise Architecture      |
+| DTD    | Detailed Technical Design    |
+| API    | API Specification            |
+| DB     | Database Documentation       |
+| TST    | Testing Documentation        |
+| OPS    | Operational Documentation    |
+
+Examples:
+
+```text id="3mly1y"
+PML-003
+ADR-012
+EA-005
+DTD-014
+API-003
+DB-002
+TST-010
+OPS-001
+```
+
+Document IDs shall never be reused.
+
+---
+
+# 6. Version Control
+
+All controlled documents shall follow Semantic Versioning.
+
+| Change Type                            | Version Increment |
+| -------------------------------------- | ----------------- |
+| Major structural change                | X.0.0             |
+| New content or significant enhancement | X.Y.0             |
+| Editorial correction or clarification  | X.Y.Z             |
+
+Example progression:
+
+```text id="9r5d7v"
+1.0.0
+
+1.1.0
+
+1.1.1
+
+2.0.0
+```
+
+---
+
+# 7. Document Status
+
+Documents shall be assigned one of the following statuses:
+
+| Status     | Meaning                                |
+| ---------- | -------------------------------------- |
+| Draft      | Under development                      |
+| Review     | Awaiting approval                      |
+| Approved   | Official project baseline              |
+| Superseded | Replaced by a newer version            |
+| Archived   | Retained for historical reference only |
+
+Only **Approved** documents shall be used as project baselines.
+
+---
+
+# 8. Revision History
+
+Every controlled document shall include a revision history.
+
+Example:
+
+| Version | Date       | Description                        | Author                              |
+| ------- | ---------- | ---------------------------------- | ----------------------------------- |
+| 1.0.0   | 2026-08-08 | Initial release                    | TIP Architecture & Engineering Team |
+| 1.1.0   | YYYY-MM-DD | Added section on API documentation | Author                              |
+| 1.1.1   | YYYY-MM-DD | Editorial corrections              | Author                              |
+
+Revision history shall never be removed.
+
+---
+
+# 9. Document Approval
+
+Documents shall follow the approval workflow below.
+
+```text id="m6htmt"
+Author
+
+↓
+
+Technical Review
+
+↓
+
+Architecture Review
+
+↓
+
+Approval
+
+↓
+
+Publication
+
+↓
+
+Version Baseline
+```
+
+Approved documents become part of the official project baseline.
+
+---
+
+# 10. Storage & Repository Structure
+
+All controlled documentation shall be stored within the project repository.
+
+```text id="itkssu"
+docs/
+
+Standards/
+
+Volume-01/
+
+Volume-02/
+
+Volume-03/
+
+Volume-04/
+
+ADR/
+
+API/
+
+UML/
+
+Images/
+```
+
+Documentation shall never be maintained outside the controlled repository without formal approval.
+
+---
+
+# 11. Naming Convention
+
+File names shall follow the pattern:
+
+```text id="rxc54k"
+<Document-ID>-<Document-Title>.md
+```
+
+Examples:
+
+```text id="pvv2ht"
+PML-003-Document-Control-Standard.md
+
+ADR-001-PostgreSQL-Selection.md
+
+DTD-014-Event-Bus-Architecture.md
+```
+
+File names shall be descriptive, consistent, and unique.
+
+---
+
+# 12. Traceability
+
+Every document shall reference related artefacts where applicable, including:
+
+* Project Master Library standards
+* Architecture Decision Records
+* Enterprise Architecture volumes
+* Functional Requirements
+* Technical Designs
+* Source Code Modules
+* Test Cases
+
+This ensures end-to-end traceability throughout the project lifecycle.
+
+---
+
+# 13. Review Cycle
+
+Controlled documents shall be reviewed:
+
+* Before major releases
+* After significant architectural changes
+* Following major incidents
+* At least annually
+
+Reviews shall determine whether documents remain current or require revision.
+
+---
+
+# 14. Archiving
+
+Superseded documents shall:
+
+* Retain their original document ID
+* Be marked as **Superseded**
+* Be retained for historical reference
+* Not be deleted from the repository
+
+Historical versions shall remain available through Git history.
+
+---
+
+# 15. Compliance
+
+Compliance with this standard is mandatory.
+
+Every contributor shall:
+
+* Use approved document templates.
+* Maintain accurate metadata.
+* Update revision history.
+* Follow naming conventions.
+* Store documents in the approved repository.
+* Reference applicable PML standards.
+
+Documents that do not comply with this standard shall not become part of the official project baseline.
+
+---
+
+# 16. Document Control Statement
+
+The Document Control Standard establishes the governance required to ensure that every document within the Trading Intelligence Platform remains accurate, traceable, controlled, and aligned with the project's engineering objectives.
+
+---
+
+# Revision History
+
+| Version | Date       | Description                       | Author                              |
+| ------- | ---------- | --------------------------------- | ----------------------------------- |
+| 1.0.0   | 2026-08-08 | Initial Document Control Standard | TIP Architecture & Engineering Team |
 
